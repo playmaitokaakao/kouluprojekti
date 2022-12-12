@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get -y install salt-master
 hostname -I
 
-# Keep the hostname in mind or write it down.
+Keep the hostname in mind or write it down.
 
 ON THE MINION:
 
