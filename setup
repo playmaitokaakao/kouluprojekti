@@ -1,0 +1,44 @@
+The salt state in question can be used easily. All you have to do is setup a salt-master and salt-minion architecture.
+You can do this on Ubuntu by using the following commands:
+
+On the master:
+sudo apt-get update
+sudo apt-get -y install salt-master
+hostname -I
+
+# Keep the hostname in mind or write it down.
+
+On the minion:
+sudo apt-get update
+sudo apt-get -y install salt-minion
+sudoedit /etc/salt/minion
+
+Inside of the /etc/salt/minion file you will write the following:
+
+master: (the IP address of the master that you found out with hostname -I)
+id: (the name you want the master to see your minion as)
+
+sudo systemctl restart salt-minion.service
+
+After you restart the salt-minion with the command you need to execute these commands on the master computer.
+
+The n the master:
+
+sudo salt-key -A
+
+After you're asked if you want to proceed:
+
+y
+
+Now that you've installed salt properly you can go to your /srv/salt directory.
+You can navigate directories with the ls and cd commands for example if you're in the /srv directory you can get to /srv/salt
+by using cd salt.
+
+In the salt directory you'll create a directory that you can name by yourself by using the following command:
+sudo mkdir (the name you want for the directory)
+
+Inside of the directory you'll create an sls file and open it by using the following command:
+sudo nano init.sls
+
+Now inside of the init.sls file you're going to write the following text:
+
