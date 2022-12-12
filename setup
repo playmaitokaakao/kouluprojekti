@@ -68,3 +68,5 @@ sudo salt '*' state.apply (the folder's name which the init.sls file resides in)
 in my case this was:
 sudo salt '*' state.apply all
 
+This project was made for Haaga-Helia course Palvelinten hallinta - ICT4TN022-3018 - ph 2022p2
+
